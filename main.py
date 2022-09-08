@@ -41,9 +41,13 @@ def check_win(board):
 
 
 def get_user_input():
-    row = input("Please enter a row number: ")
-    column = input("Please enter a column number: ")
-    return int(row)-1, int(column)-1
+    row = ''
+    while (row.isdigit() is False) or int(row) < 1 or int(row) > 3:
+        row = input("Please enter a row number (1-3): ")
+    column = ''
+    while (column.isdigit() is False) or int(column) < 1 or int(column) > 3:
+        column = input("Please enter a column number (1-3): ")
+    return int(row) - 1, int(column) - 1
 
 
 def submit_user_input(player, user_input):
